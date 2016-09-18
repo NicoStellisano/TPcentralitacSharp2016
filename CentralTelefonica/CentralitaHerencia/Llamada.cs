@@ -33,19 +33,28 @@ namespace CentralitaHerencia
             }
         }
 
+        public Llamada()
+        {
+            _duracion = 0;
+        }
         public Llamada(string origen, string destino, float duracion)
         {
+            this._nroOrigen = origen;
+            this._nroDestino = destino;
+            this._duracion = duracion;
 
         }
 
         public void Mostrar()
         {
-
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Origen: " + this._nroOrigen + " Destino: " + this._nroDestino + "Duracion: " + this._duracion);
+            Console.WriteLine(sb.ToString());
         }
 
-        public int OrdenarPorDuracion(Llamada uno, Llamada dos)
+        public static int OrdenarPorDuracion(Llamada uno, Llamada dos)
         {
-            return 0;
+            return uno._duracion.ToString().CompareTo(dos._duracion.ToString());
         }
 
     }

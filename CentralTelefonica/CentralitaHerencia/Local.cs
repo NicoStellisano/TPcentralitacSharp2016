@@ -8,9 +8,9 @@ namespace CentralitaHerencia
 {
     public class Local:Llamada
     {
-        protected float _costo;
+        protected double _costo;
 
-        public float CostoLamada
+        public double CostoLlamada
         {
             get
             {
@@ -18,17 +18,17 @@ namespace CentralitaHerencia
             }
         }
 
-        private float CalcularCosto()
+        private double CalcularCosto()
         {
             return _costo * _duracion;
         }
 
         public Local(Llamada unaLlamada, float costo)
         {
-
+            this._costo = costo;
         }
 
-        public Local(string origen, float duracion, string destino, float costo):base(origen,destino,duracion)
+        public Local(string origen, float duracion, string destino, double costo):base(origen,destino,duracion)
         {
             this._nroOrigen = origen;
             this._duracion = duracion;
@@ -38,6 +38,9 @@ namespace CentralitaHerencia
 
         public void Mostrar()
         {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("Costo : " + this.CostoLlamada);
+            Console.WriteLine("Origen: " + this.NroOrigen + " Duracion: " + this.Duracion + " Destino: " +this.NroDestino + sb.ToString());
 
         }
     }
