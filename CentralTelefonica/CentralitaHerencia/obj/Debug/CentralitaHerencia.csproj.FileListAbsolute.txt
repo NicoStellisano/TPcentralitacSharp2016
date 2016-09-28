@@ -4,3 +4,9 @@ C:\Users\Nico\Documents\GitHub\TPcentralitacSharp2016\CentralTelefonica\Centrali
 C:\Users\Nico\Documents\GitHub\TPcentralitacSharp2016\CentralTelefonica\CentralitaHerencia\obj\Debug\CentralitaHerencia.csprojResolveAssemblyReference.cache
 C:\Users\Nico\Documents\GitHub\TPcentralitacSharp2016\CentralTelefonica\CentralitaHerencia\obj\Debug\CentralitaHerencia.exe
 C:\Users\Nico\Documents\GitHub\TPcentralitacSharp2016\CentralTelefonica\CentralitaHerencia\obj\Debug\CentralitaHerencia.pdb
+D:\CentralitaStellisano\CentralTelefonica\CentralitaHerencia\bin\Debug\CentralitaHerencia.exe.config
+D:\CentralitaStellisano\CentralTelefonica\CentralitaHerencia\obj\Debug\CentralitaHerencia.exe
+D:\CentralitaStellisano\CentralTelefonica\CentralitaHerencia\obj\Debug\CentralitaHerencia.pdb
+D:\CentralitaStellisano\CentralTelefonica\CentralitaHerencia\bin\Debug\CentralitaHerencia.exe
+D:\CentralitaStellisano\CentralTelefonica\CentralitaHerencia\bin\Debug\CentralitaHerencia.pdb
+D:\CentralitaStellisano\CentralTelefonica\CentralitaHerencia\obj\Debug\CentralitaHerencia.csprojResolveAssemblyReference.cache

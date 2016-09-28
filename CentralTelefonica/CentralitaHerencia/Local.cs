@@ -23,7 +23,7 @@ namespace CentralitaHerencia
             return _costo * _duracion;
         }
 
-        public Local(Llamada unaLlamada, float costo)
+        public Local(Llamada unaLlamada, float costo):this(unaLlamada.NroOrigen,unaLlamada.Duracion,unaLlamada.NroDestino,costo)
         {
             this._costo = costo;
         }

@@ -61,8 +61,16 @@ namespace CentralitaHerencia
 
         private double CalcularGanancia(TipoLlamada tipo)
         {
+            float ganancia;
             if (tipo == TipoLlamada.Local)
             {
+                foreach (var item in Llamadas)
+                {
+                    if (item is Local)
+                    {
+                        
+                    }
+                }
                 return GananciaPorLocal;
             }else 
 

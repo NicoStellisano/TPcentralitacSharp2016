@@ -37,7 +37,7 @@ namespace CentralitaHerencia
            
         }
 
-        public Provincial(Franja miFranja, Llamada unaLlamada)
+        public Provincial(Franja miFranja, Llamada unaLlamada):this(unaLlamada.NroOrigen,(Franja)miFranja,unaLlamada.Duracion,unaLlamada.NroDestino)
         {
             this._franjaHoraria = miFranja;
             
