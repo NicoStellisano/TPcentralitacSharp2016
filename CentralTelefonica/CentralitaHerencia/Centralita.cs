@@ -16,9 +16,10 @@ namespace CentralitaHerencia
         {
             get
             {
-                foreach (Local item in this._listaDeLlamadas)
+                foreach (Llamada item in this._listaDeLlamadas)
                 {
-                    this._aux +=item.CostoLlamada;
+                    if(item is Local)
+                    this._aux +=((Local)item).CostoLlamada;
                 }
                 return this._aux;
             }
@@ -28,9 +29,10 @@ namespace CentralitaHerencia
         {
             get
             {
-                foreach (Provincial item in this._listaDeLlamadas)
+                foreach (Llamada item in this._listaDeLlamadas)
                 {
-                    this._aux += item.CostoLlamada;
+                    if (item is Provincial)
+                        this._aux += ((Provincial)item).CostoLlamada;
                 }
                 return this._aux;
             }
@@ -39,14 +41,16 @@ namespace CentralitaHerencia
         {
             get
             {
-                foreach (Local item in this._listaDeLlamadas)
+                foreach (Llamada item in this._listaDeLlamadas)
                 {
-                    this._aux += item.CostoLlamada;
+                    if (item is Local)
+                        this._aux += ((Local)item).CostoLlamada;
                 }
 
-                foreach (Provincial item in this._listaDeLlamadas)
+                foreach (Llamada item in this._listaDeLlamadas)
                 {
-                    this._aux += item.CostoLlamada;
+                    if (item is Provincial)
+                        this._aux += ((Provincial)item).CostoLlamada;
                 }
                 return this._aux;
             }
