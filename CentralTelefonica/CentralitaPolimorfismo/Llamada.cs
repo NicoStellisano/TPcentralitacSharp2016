@@ -35,6 +35,31 @@ namespace CentralitaPolimorfismo
             }
         }
 
+        public Llamada(string origen, string destino, float duracion)
+        {
+
+        }
+
+        protected string Mostrar()
+        {
+
+        }
+
+        public static bool operator !=(Llamada uno, Llamada dos)
+        {
+
+        }
+
+        public static bool operator ==(Llamada uno, Llamada dos)
+        {
+
+        }
+
+        public int OrdenarPorDuracion(Llamada uno, Llamada dos)
+        {
+
+        }
+
 
     }
 }
