@@ -19,3 +19,6 @@ D:\CentraStellisano\CentralTelefonica\CentralitaHerencia\obj\Debug\CentralitaHer
 D:\Stellisano\CentralTelefonica\CentralitaHerencia\bin\Debug\CentralitaHerencia.exe.config
 D:\Stellisano\CentralTelefonica\CentralitaHerencia\obj\Debug\CentralitaHerencia.exe
 D:\Stellisano\CentralTelefonica\CentralitaHerencia\obj\Debug\CentralitaHerencia.pdb
+D:\StellisanoCentralita\CentralTelefonica\CentralitaHerencia\bin\Debug\CentralitaHerencia.exe.config
+D:\StellisanoCentralita\CentralTelefonica\CentralitaHerencia\obj\Debug\CentralitaHerencia.exe
+D:\StellisanoCentralita\CentralTelefonica\CentralitaHerencia\obj\Debug\CentralitaHerencia.pdb

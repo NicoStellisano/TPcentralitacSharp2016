@@ -17,14 +17,13 @@ namespace CentralitaHerencia
                 return CalcularCosto(); 
             }
         }
-
-        public void Mostrar()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.Append("Franja : " + this._franjaHoraria.ToString() + "Costo : " + this.CostoLlamada);
-            Console.WriteLine("Origen: " + this.NroOrigen + " Duracion: " + this.Duracion + " Destino: " + this.NroDestino + sb.ToString());
-
-        }
+       
+            protected string Mostrar()
+            {
+                StringBuilder sb = new StringBuilder();    
+                 sb.AppendLine("Origen: " + this.NroOrigen + " Duracion: " + this.Duracion + " Destino: " + this.NroDestino + "Franja : " + this._franjaHoraria.ToString() + "Costo : " + this.CostoLlamada);
+                 return sb.ToString();
+             }
 
         private double CalcularCosto()
         {
@@ -49,6 +48,17 @@ namespace CentralitaHerencia
             this._franjaHoraria = miFranja;
             this._duracion = duracion;
             this._nroDestino = destino;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Provincial;
+
+        }
+
+        public override string ToString()
+        {
+            return Mostrar();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CentralitaHerencia
 {
-    public class Local:Llamada
+    public class Local : Llamada
     {
         protected double _costo;
 
@@ -23,12 +23,14 @@ namespace CentralitaHerencia
             return _costo * _duracion;
         }
 
-        public Local(Llamada unaLlamada, float costo):this(unaLlamada.NroOrigen,unaLlamada.Duracion,unaLlamada.NroDestino,costo)
+        public Local(Llamada unaLlamada, float costo)
+            : this(unaLlamada.NroOrigen, unaLlamada.Duracion, unaLlamada.NroDestino, costo)
         {
             this._costo = costo;
         }
 
-        public Local(string origen, float duracion, string destino, double costo):base(origen,destino,duracion)
+        public Local(string origen, float duracion, string destino, double costo)
+            : base(origen, destino, duracion)
         {
             this._nroOrigen = origen;
             this._duracion = duracion;
@@ -36,12 +38,23 @@ namespace CentralitaHerencia
             this._costo = costo;
         }
 
-        public void Mostrar()
+        protected string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("Costo : " + this.CostoLlamada);
-            Console.WriteLine("Origen: " + this.NroOrigen + " Duracion: " + this.Duracion + " Destino: " +this.NroDestino + sb.ToString());
+        
+            sb.AppendLine("Origen: " + this.NroOrigen + " Duracion: " + this.Duracion + " Destino: " + this.NroDestino + "Costo : " + this.CostoLlamada);
+            return sb.ToString();
 
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Local;
+        }
+
+        public override string ToString()
+        {
+            return Mostrar();
         }
     }
 }

@@ -117,11 +117,7 @@ namespace CentralitaHerencia
 
         public void Mostrar()
         {
-            Console.WriteLine("RS: " + this._razonSocial + " Gan Tot: " + this.GananciaTotal + " Gan Local: " + this.GananciaPorLocal + " Gan Prov: " + this.GananciaPorProvincial);
-            foreach (Llamada item in this._listaDeLlamadas)
-            {
-                item.Mostrar();
-            }
+            
         }
 
         public void OrdenarLlamadas()
@@ -140,6 +136,38 @@ namespace CentralitaHerencia
         {
             central.agregarLlamada(unaLlamada);
             return central;
+        }
+
+        public static bool operator !=(Centralita central, Llamada unaLlamada)
+        {
+            
+        }
+
+        public static bool operator ==(Centralita central, Llamada unaLlamada)
+        {
+            central.agregarLlamada(unaLlamada);
+            return central;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("RS: " + this._razonSocial + " Gan Tot: " + this.GananciaTotal + " Gan Local: " + this.GananciaPorLocal + " Gan Prov: " + this.GananciaPorProvincial);
+            foreach (Llamada item in this._listaDeLlamadas)
+            {
+                if (item is Local)
+                {
+                    sb.AppendLine(((Local)item).ToString());
+                }
+
+                if (item is Provincial)
+                {
+                    sb.AppendLine(((Provincial)item).ToString());
+
+                }
+            }
+
+            return sb.ToString();
         }
     
     }

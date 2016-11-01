@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CentralitaHerencia
 {
-    public class Llamada
+    public abstract class  Llamada
     {
         protected float _duracion;
         public float Duracion
@@ -45,11 +45,11 @@ namespace CentralitaHerencia
 
         }
 
-        public void Mostrar()
+        protected virtual string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Origen: " + this._nroOrigen + " Destino: " + this._nroDestino + "Duracion: " + this._duracion);
-            Console.WriteLine(sb.ToString());
+            return sb.ToString();
         }
 
         public static int OrdenarPorDuracion(Llamada uno, Llamada dos)
@@ -57,5 +57,25 @@ namespace CentralitaHerencia
             return uno._duracion.ToString().CompareTo(dos._duracion.ToString());
         }
 
+        public abstract float CostoLlamada
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            
+        }
+
+        public static bool operator ==(Llamada llamadaUno, Llamada llamadaDos)
+        {
+            if ((llamadaUno.Equals(llamadaDos)) && (llamadaUno.NroDestino == llamadaDos.NroDestino) && (llamadaDos.NroOrigen == llamadaUno.NroOrigen))
+                return true;
+            return false;
+          }
+
+        public static bool operator !=(Llamada llamadaUno, Llamada llamadaDos)
+        {
+            return !(llamadaUno == llamadaDos);
+        }
     }
 }
