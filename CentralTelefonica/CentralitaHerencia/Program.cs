@@ -20,6 +20,9 @@ namespace CentralitaHerencia
             Telefonica += llamada2;
             Telefonica += llamada3;
             Telefonica += llamada4;
+            Telefonica += llamada4;
+            Telefonica += llamada2;
+
 
             Telefonica.OrdenarLlamadas();
             Console.ReadKey();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CentralitaHerencia
 {
-    public abstract class  Llamada
+    public abstract class Llamada
     {
         protected float _duracion;
         public float Duracion
@@ -57,14 +57,11 @@ namespace CentralitaHerencia
             return uno._duracion.ToString().CompareTo(dos._duracion.ToString());
         }
 
-        public abstract float CostoLlamada
+        public abstract double CostoLlamada
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            
+            get;
         }
+
 
         public static bool operator ==(Llamada llamadaUno, Llamada llamadaDos)
         {

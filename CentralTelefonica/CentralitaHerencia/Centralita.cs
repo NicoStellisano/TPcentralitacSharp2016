@@ -11,6 +11,7 @@ namespace CentralitaHerencia
         private List<Llamada> _listaDeLlamadas;
         protected string _razonSocial;
         private double _aux;
+        public static int contador=0;
 
         public double GananciaPorLocal
         {
@@ -115,38 +116,43 @@ namespace CentralitaHerencia
             this._razonSocial = nombreEmpresa;
         }
 
-        public void Mostrar()
-        {
-            
-        }
+        
 
         public void OrdenarLlamadas()
         {
             this._listaDeLlamadas.Sort(Llamada.OrdenarPorDuracion);
-            this.Mostrar();
+            Console.Write(this.ToString());
         }
 
         private bool agregarLlamada(Llamada unaLlamada)
         {
             this._listaDeLlamadas.Add(unaLlamada);
+            Console.Write(this.ToString());
             return true;
         }
 
         public static Centralita operator +(Centralita central, Llamada unaLlamada)
         {
-            central.agregarLlamada(unaLlamada);
+            if (central != unaLlamada)
+                central.agregarLlamada(unaLlamada);
+            else
+                Console.WriteLine("Ya existe esa llamada");
             return central;
         }
 
         public static bool operator !=(Centralita central, Llamada unaLlamada)
         {
-            
+            return !(central == unaLlamada);
         }
 
         public static bool operator ==(Centralita central, Llamada unaLlamada)
         {
-            central.agregarLlamada(unaLlamada);
-            return central;
+            foreach (Llamada item in central._listaDeLlamadas)
+            {
+                if (item == unaLlamada)
+                    return true;
+            }
+            return false;
         }
 
         public override string ToString()
@@ -157,7 +163,7 @@ namespace CentralitaHerencia
             {
                 if (item is Local)
                 {
-                    sb.AppendLine(((Local)item).ToString());
+                    sb.AppendLine((((Local)item).ToString()));
                 }
 
                 if (item is Provincial)

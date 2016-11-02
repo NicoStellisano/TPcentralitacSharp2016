@@ -10,7 +10,7 @@ namespace CentralitaHerencia
     {
         protected Franja _franjaHoraria;
 
-        public double CostoLlamada
+        public override double CostoLlamada
         {
             get
             {
@@ -18,10 +18,10 @@ namespace CentralitaHerencia
             }
         }
        
-            protected string Mostrar()
+            protected override string Mostrar()
             {
                 StringBuilder sb = new StringBuilder();    
-                 sb.AppendLine("Origen: " + this.NroOrigen + " Duracion: " + this.Duracion + " Destino: " + this.NroDestino + "Franja : " + this._franjaHoraria.ToString() + "Costo : " + this.CostoLlamada);
+                 sb.AppendLine("Origen: " + this.NroOrigen + " Duracion: " + this.Duracion + " Destino: " + this.NroDestino + " Franja : " + this._franjaHoraria.ToString() + " Costo : " + this.CostoLlamada);
                  return sb.ToString();
              }
 

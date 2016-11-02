@@ -10,7 +10,7 @@ namespace CentralitaHerencia
     {
         protected double _costo;
 
-        public double CostoLlamada
+        public override double CostoLlamada
         {
             get
             {
@@ -38,11 +38,11 @@ namespace CentralitaHerencia
             this._costo = costo;
         }
 
-        protected string Mostrar()
+        protected override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
         
-            sb.AppendLine("Origen: " + this.NroOrigen + " Duracion: " + this.Duracion + " Destino: " + this.NroDestino + "Costo : " + this.CostoLlamada);
+            sb.AppendLine("Origen: " + this.NroOrigen + " Duracion: " + this.Duracion + " Destino: " + this.NroDestino + " Costo : " + this.CostoLlamada);
             return sb.ToString();
 
         }
