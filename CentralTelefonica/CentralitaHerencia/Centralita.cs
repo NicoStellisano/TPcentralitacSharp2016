@@ -197,7 +197,7 @@ namespace CentralitaHerencia
 
         public bool Serializarse()
         {
-            return true;
+           return Serializador.Serializador.SerializarCentralita(this);
 
         }
 

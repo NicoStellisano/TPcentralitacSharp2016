@@ -73,13 +73,13 @@ namespace CentralitaHerencia
 
             }
 
-            public static void SerializarCentralita(Centralita central)
+            public static bool SerializarCentralita(Centralita central)
             {
                 try
                 {
-                    using (XmlTextWriter escritor = new XmlTextWriter("Aula.xml", Encoding.UTF8))
+                    using (XmlTextWriter escritor = new XmlTextWriter("Centralita.xml", Encoding.UTF8))
                     {
-                        XmlSerializer serializador = new XmlSerializer(typeof(Aula));
+                        XmlSerializer serializador = new XmlSerializer(typeof(Centralita));
                         serializador.Serialize(escritor, central);
                     }
                 }
