@@ -6,12 +6,33 @@ using System.Threading.Tasks;
 
 namespace CentralitaHerencia
 {
-    public class Centralita
+    public class Centralita:ISerializable
     {
         private List<Llamada> _listaDeLlamadas;
+        public List<Llamada> Llamadas
+        {
+            get
+            {
+                return this._listaDeLlamadas;
+            }
+        }
+
         protected string _razonSocial;
+        public string RazonSocial
+        {
+            get { return this._razonSocial; }
+            set { this._razonSocial = value; }
+        }
+
         private double _aux;
         public static int contador=0;
+
+        protected string _ruta;
+        public string RutaDeArchivo
+        {
+            get { return this._ruta; }
+            set { this._ruta = value; }
+        }
 
         public double GananciaPorLocal
         {
@@ -56,14 +77,7 @@ namespace CentralitaHerencia
                 return this._aux;
             }
         }
-        public List<Llamada> Llamadas
-        {
-            get
-            {
-                return this._listaDeLlamadas;
-            }
-        }
-
+    
         private double CalcularGanancia(TipoLlamada tipo)
         {
             double ganancia;
@@ -175,6 +189,24 @@ namespace CentralitaHerencia
 
             return sb.ToString();
         }
+
+        protected bool GuardarEnArchivo(Llamada unaLlamada, bool agrego)
+        {
+            return true;
+        }
+
+        public bool Serializarse()
+        {
+            return true;
+
+        }
+
+        public bool DeSerializarse()
+        {
+            return true;
+        }
+
+
     
     }
 }
