@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CentralitaHerencia
 {
+    
     public abstract class Llamada
     {
         protected float _duracion;

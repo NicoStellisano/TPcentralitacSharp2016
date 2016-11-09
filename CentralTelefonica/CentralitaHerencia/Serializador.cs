@@ -12,7 +12,7 @@ namespace CentralitaHerencia
     {
         public static class Serializador
         {
-            public static bool SerializarLlamada(Llamada llamada)
+           /* public static bool SerializarLlamada(Llamada llamada)
             {
                 bool flag = false;
                 try
@@ -24,9 +24,10 @@ namespace CentralitaHerencia
                         flag = true;
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     flag = false;
+                    throw new CentralitaException("No se pudo serializar ","Tipo: " + llamada.GetType().ToString(), " SerializarLlamada", ex);
                     // throw;
                 }
                 return flag;
@@ -46,10 +47,11 @@ namespace CentralitaHerencia
                         // flag = true;
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     //  flag = false;
-                    //throw;
+                    throw new CentralitaException("No se pudo Deserializar ", "Tipo: " + llamad.GetType().ToString(), " SerializarLlamada", ex);
+
                 }
                 return llamad;
             }
@@ -65,30 +67,59 @@ namespace CentralitaHerencia
                         serializador.Serialize(escritor, listadoLlam);
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    throw new CentralitaException("No se pudo serializar ", "Tipo: " + listadoLlam.GetType().ToString(), " SerializarListaPersonas", ex);
 
                     // throw;
                 }
 
             }
-
+*/
             public static bool SerializarCentralita(Centralita central)
             {
+                bool flag = false;
                 try
                 {
-                    using (XmlTextWriter escritor = new XmlTextWriter("Centralita.xml", Encoding.UTF8))
+                    using (XmlTextWriter escritor = new XmlTextWriter(central.RutaDeArchivo, Encoding.UTF8))
                     {
                         XmlSerializer serializador = new XmlSerializer(typeof(Centralita));
                         serializador.Serialize(escritor, central);
+                        flag = true;
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
-                    throw;
+                    flag = false;
+                    throw new CentralitaException("No se pudo serializar ", "Tipo: " + central.GetType().ToString(), " SerializarCentralita", ex);
+                    
                 }
 
+                return flag;
+
+            }
+
+            public static Centralita DeserializarCentral(string ruta)
+            {
+                // bool flag = false;
+                Centralita central = null;
+
+                try
+                {
+                    using (XmlTextReader lector = new XmlTextReader(ruta))
+                    {
+                        XmlSerializer serializador = new XmlSerializer(typeof(Llamada));
+                        central = (Centralita)serializador.Deserialize(lector);
+                        // flag = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    //  flag = false;
+                    throw new CentralitaException("No se pudo Deserializar ", "Tipo: " + central.GetType().ToString(), " SerializarLlamada", ex);
+
+                }
+                return central;
             }
 
             public static bool SerializarGenerico(ISerializable Iseria)

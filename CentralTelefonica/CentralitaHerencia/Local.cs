@@ -22,6 +22,10 @@ namespace CentralitaHerencia
         {
             return _costo * _duracion;
         }
+        public Local()
+        {
+
+        }
 
         public Local(Llamada unaLlamada, float costo)
             : this(unaLlamada.NroOrigen, unaLlamada.Duracion, unaLlamada.NroDestino, costo)

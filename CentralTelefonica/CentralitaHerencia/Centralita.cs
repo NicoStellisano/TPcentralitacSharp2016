@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace CentralitaHerencia
 {
+    [XmlInclude(typeof(Llamada))]
+    [XmlInclude(typeof(Provincial))]
+    [XmlInclude(typeof(Local))]
+
     public class Centralita:ISerializable
     {
         private List<Llamada> _listaDeLlamadas;
@@ -203,7 +209,19 @@ namespace CentralitaHerencia
 
         public bool DeSerializarse()
         {
-            return true;
+            bool flag = false;
+            try
+            {
+                Serializador.Serializador.DeserializarCentral(this.RutaDeArchivo);
+                flag = true;
+            }
+            catch (Exception ex)
+            {
+                flag = false;
+                Console.WriteLine(ex.Message);
+            }
+
+            return flag;
         }
 
 
