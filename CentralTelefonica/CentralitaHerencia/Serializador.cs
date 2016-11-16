@@ -10,9 +10,8 @@ namespace CentralitaHerencia
 {
     public static class Serializador
     {
-        public static class Serializador
-        {
-           /* public static bool SerializarLlamada(Llamada llamada)
+        
+            public static bool SerializarLlamada(Llamada llamada)
             {
                 bool flag = false;
                 try
@@ -75,7 +74,7 @@ namespace CentralitaHerencia
                 }
 
             }
-*/
+
             public static bool SerializarCentralita(Centralita central)
             {
                 bool flag = false;
@@ -126,6 +125,6 @@ namespace CentralitaHerencia
             {
                 return Iseria.Serializarse();
             }
-        }
+        
     }
 }

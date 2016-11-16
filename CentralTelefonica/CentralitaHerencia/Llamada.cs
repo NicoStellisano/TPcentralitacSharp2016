@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Xml;
+using System.Xml.Serialization;
 namespace CentralitaHerencia
 {
-    
+    [XmlInclude(typeof(Provincial))]
+    [XmlInclude(typeof(Local))]
     public abstract class Llamada
     {
         protected float _duracion;

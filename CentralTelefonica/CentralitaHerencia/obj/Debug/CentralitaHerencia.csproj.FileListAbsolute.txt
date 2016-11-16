@@ -28,3 +28,9 @@ D:\SteCentralita\CentralTelefonica\CentralitaHerencia\obj\Debug\CentralitaHerenc
 D:\CentralStell\CentralTelefonica\CentralitaHerencia\bin\Debug\CentralitaHerencia.exe.config
 D:\CentralStell\CentralTelefonica\CentralitaHerencia\obj\Debug\CentralitaHerencia.exe
 D:\CentralStell\CentralTelefonica\CentralitaHerencia\obj\Debug\CentralitaHerencia.pdb
+D:\CStellisano\CentralTelefonica\CentralitaHerencia\bin\Debug\CentralitaHerencia.exe.config
+D:\CStellisano\CentralTelefonica\CentralitaHerencia\obj\Debug\CentralitaHerencia.exe
+D:\CStellisano\CentralTelefonica\CentralitaHerencia\obj\Debug\CentralitaHerencia.pdb
+D:\CStellisano\CentralTelefonica\CentralitaHerencia\obj\Debug\CentralitaHerencia.csprojResolveAssemblyReference.cache
+D:\CStellisano\CentralTelefonica\CentralitaHerencia\bin\Debug\CentralitaHerencia.exe
+D:\CStellisano\CentralTelefonica\CentralitaHerencia\bin\Debug\CentralitaHerencia.pdb

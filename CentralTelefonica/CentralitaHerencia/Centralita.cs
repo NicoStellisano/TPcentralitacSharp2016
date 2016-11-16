@@ -203,7 +203,7 @@ namespace CentralitaHerencia
 
         public bool Serializarse()
         {
-           return Serializador.Serializador.SerializarCentralita(this);
+           return Serializador.SerializarCentralita(this);
 
         }
 
@@ -212,7 +212,7 @@ namespace CentralitaHerencia
             bool flag = false;
             try
             {
-                Serializador.Serializador.DeserializarCentral(this.RutaDeArchivo);
+                Serializador.DeserializarCentral(this.RutaDeArchivo);
                 flag = true;
             }
             catch (Exception ex)

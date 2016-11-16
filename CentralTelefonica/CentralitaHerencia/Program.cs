@@ -16,6 +16,7 @@ namespace CentralitaHerencia
             Local llamada3 = new Local("45252", 45, "45645", 1.99);
             Provincial llamada4 = new Provincial(Franja.Franja_3, llamada2);
 
+            Telefonica.RutaDeArchivo = "Centralita.xml";
             Telefonica += llamada1;
             Telefonica += llamada2;
             Telefonica += llamada3;
@@ -25,6 +26,7 @@ namespace CentralitaHerencia
 
 
             Telefonica.OrdenarLlamadas();
+            Telefonica.Serializarse();
             Console.ReadKey();
         }
     }
