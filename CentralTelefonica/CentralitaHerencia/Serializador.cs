@@ -16,7 +16,7 @@ namespace CentralitaHerencia
                 bool flag = false;
                 try
                 {
-                    using (XmlTextWriter escritor = new XmlTextWriter("Llamada.xml", Encoding.UTF8))
+                    using (XmlTextWriter escritor = new XmlTextWriter("Centralita.xml", Encoding.UTF8))
                     {
                         XmlSerializer serializador = new XmlSerializer(typeof(Llamada));
                         serializador.Serialize(escritor, llamada);
@@ -39,7 +39,7 @@ namespace CentralitaHerencia
 
                 try
                 {
-                    using (XmlTextReader lector = new XmlTextReader("Llamada.xml"))
+                    using (XmlTextReader lector = new XmlTextReader("Centralita.xml"))
                     {
                         XmlSerializer serializador = new XmlSerializer(typeof(Llamada));
                         llamad = (Llamada)serializador.Deserialize(lector);

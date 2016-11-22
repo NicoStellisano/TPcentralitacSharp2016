@@ -9,7 +9,7 @@ namespace CentralitaHerencia
 {
     [XmlInclude(typeof(Provincial))]
     [XmlInclude(typeof(Local))]
-    public abstract class Llamada
+    public abstract class Llamada 
     {
         protected float _duracion;
         public float Duracion
@@ -17,6 +17,11 @@ namespace CentralitaHerencia
             get
             {
                 return this._duracion;
+            }
+
+            set
+            {
+                this._duracion = value;
             }
         }
         protected string _nroDestino;
@@ -26,6 +31,10 @@ namespace CentralitaHerencia
             {
                 return this._nroDestino;
             }
+            set
+            {
+                this._nroDestino = value;
+            }
         }
         protected string _nroOrigen;
         public string NroOrigen
@@ -33,6 +42,11 @@ namespace CentralitaHerencia
             get
             {
                 return this._nroOrigen;
+            }
+
+            set
+            {
+                this._nroOrigen = value;
             }
         }
 
@@ -77,6 +91,7 @@ namespace CentralitaHerencia
         {
             return !(llamadaUno == llamadaDos);
         }
+
 
 
     }

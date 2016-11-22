@@ -9,6 +9,11 @@ namespace CentralitaHerencia
     public class Local : Llamada
     {
         protected double _costo;
+        public double Costo
+        {
+            get { return this._costo; }
+            set { this._costo = value; }
+        }
 
         public override double CostoLlamada
         {

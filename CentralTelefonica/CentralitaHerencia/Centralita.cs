@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
+using System.IO;
 
 namespace CentralitaHerencia
 {
@@ -21,6 +22,7 @@ namespace CentralitaHerencia
             {
                 return this._listaDeLlamadas;
             }
+
         }
 
         protected string _razonSocial;
@@ -144,11 +146,22 @@ namespace CentralitaHerencia
             Console.Write(this.ToString());
         }
 
-        private bool agregarLlamada(Llamada unaLlamada)
+        private void agregarLlamada(Llamada unaLlamada)
         {
-            this._listaDeLlamadas.Add(unaLlamada);
-            Console.Write(this.ToString());
-            return true;
+            bool escribir = true;
+
+            try
+            {
+                this._listaDeLlamadas.Add(unaLlamada);
+                this.GuardarEnArchivo(unaLlamada, escribir);
+                Console.Write(this.ToString());
+            }
+            catch (Exception e)
+            {
+                
+                throw new CentralitaException(e.Message,e.Source,e.TargetSite.ToString(),e);
+            }
+           
         }
 
         public static Centralita operator +(Centralita central, Llamada unaLlamada)
@@ -198,7 +211,32 @@ namespace CentralitaHerencia
 
         protected bool GuardarEnArchivo(Llamada unaLlamada, bool agrego)
         {
-            return true;
+            bool funciona = false;
+            try
+            {
+                using (StreamWriter escritor = new StreamWriter("Centralita.txt",agrego))
+                {
+                    escritor.WriteLine();
+                    escritor.WriteLine("CALL: ");
+                    escritor.WriteLine(DateTime.Now.ToString());
+
+                    if (unaLlamada.GetType() == typeof(Local))
+                    {
+                        escritor.WriteLine(((Local)unaLlamada).ToString());
+                    }
+                    else if (unaLlamada.GetType() == typeof(Provincial)) 
+                    {
+                        escritor.WriteLine(((Provincial)unaLlamada).ToString());
+                    }
+                    funciona = true;
+                }
+            }
+            catch (Exception e)
+            {
+                funciona = false;
+                throw new CentralitaException("Error al escribir archivo",e.Source,e.TargetSite.ToString(),e);
+            }
+            return funciona;
         }
 
         public bool Serializarse()

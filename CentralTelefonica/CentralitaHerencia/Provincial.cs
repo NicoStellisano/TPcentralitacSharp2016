@@ -8,7 +8,13 @@ namespace CentralitaHerencia
 {
     public class Provincial:Llamada
     {
-        protected Franja _franjaHoraria;
+        private Franja _franjaHoraria;
+
+        public Franja FranjaHoraria
+        {
+            get { return _franjaHoraria; }
+            set { _franjaHoraria = value; }
+        }
 
         public override double CostoLlamada
         {

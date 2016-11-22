@@ -1,0 +1,5 @@
+
+CALL: 
+22/11/2016 9:17:38
+Origen: 45252 Duracion: 45 Destino: 45645 Costo : 89,55
+
